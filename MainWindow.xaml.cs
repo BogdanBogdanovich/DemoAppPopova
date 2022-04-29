@@ -42,6 +42,7 @@ namespace DemoAppPopova
             listFiltr.Add("Сортировка");
             listFiltr.Add("По возрастанию");
             listFiltr.Add("По убыванию");
+            listFiltr.Add("По названию");
            
             cbSort.SelectedIndex = 0;
             cbSort.ItemsSource = listFiltr;
