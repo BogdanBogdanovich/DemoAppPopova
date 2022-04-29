@@ -35,8 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,6 +76,69 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Agent.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AgentPriorityHistory.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AgentType.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Material.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialCountHistory.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MaterialType.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelAgentDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAgentDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelAgentDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ModelAgentDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelAgentDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Product.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductCostHistory.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductMaterial.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductSale.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProductType.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Shop.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Supplier.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagrams.cs">
+      <DependentUpon>ModelAgentDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +156,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Model\ModelAgentDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelAgentDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ModelAgentDB.edmx.diagram">
+      <DependentUpon>ModelAgentDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +171,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
+    <Folder Include="Page\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ModelAgentDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelAgentDB.Context.cs</LastGenOutput>
+      <DependentUpon>ModelAgentDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model\ModelAgentDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelAgentDB.edmx</DependentUpon>
+      <LastGenOutput>ModelAgentDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
